@@ -12,5 +12,5 @@ services:
       - ${CONTAINER_PORT}:${FRONT_PORT}
     volumes:
       - ./sample/nuxt3-app:/nuxt3-app
-    working_dir: /nuxt3-app
+    working_dir: /
     command: yarn run dev
