@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  sample:
+    # env_file: .env
+    build:
+      context: ./sample
+      args:
+        - WORKDIR=nuxt3-app
+        - FRONT_PORT=3000
+        - CONTAINER_PORT=3000
+    ports:
+      - ${CONTAINER_PORT}:${FRONT_PORT}
+    volumes:
+      - ./sample/nuxt3-app:/nuxt3-app
+    working_dir: /nuxt3-app
+    command: yarn run dev
