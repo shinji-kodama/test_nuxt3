@@ -14,9 +14,11 @@ viteが使えないとか、色々問題はありますが
 3. `docker-compose build`
 4. `docker-compose run --rm sample npx nuxi init nuxt3-app`
 5. docker-compose.ymlの中身を書き換えましょう（超ダサい）
+
     `working_dir: /` -> `working_dir: /nuxt3-app` 
 6. `docker-compose run --rm sample yarn install`
 7. nuxt.config.tsのdefineNuxtConfig内に以下を追加
+
     `vite: false`
 8. `docker-compose up -d`
 
