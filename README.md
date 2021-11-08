@@ -13,14 +13,23 @@ viteが使えないとか、色々問題はありますが
 2. `test_nuxt3`フォルダに移動
 3. `docker-compose build`
 4. `docker-compose run --rm sample npx nuxi init nuxt3-app`
-5. docker-compose.ymlの中身を書き換えましょう（超ダサい）
+5. docker-compose.ymlの中身を以下のように書き換えましょう（超ダサい）
 
     `working_dir: /` -> `working_dir: /nuxt3-app` 
+    
 6. `docker-compose run --rm sample yarn install`
 7. nuxt.config.tsのdefineNuxtConfig内に以下を追加
 
     `vite: false`
+
 8. `docker-compose up -d`
+9. docker環境でディレクトリに入るには
+
+    `docker-compose exec sample sh`
+
+
+
+### 補足
 
 - 途中でdocker-compose.ymlを書き換えるという謎な工程が必要なので、そのうち作り替えます
 

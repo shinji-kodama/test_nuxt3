@@ -4,12 +4,12 @@ services:
     # env_file: .env
     build:
       context: ./sample
-      args:
-        - WORKDIR=nuxt3-app
-        - FRONT_PORT=3000
-        - CONTAINER_PORT=3000
+      # args:
+      #   - WORKDIR=nuxt3-app
+      #   - FRONT_PORT=3000
+      #   - CONTAINER_PORT=3000
     ports:
-      - ${CONTAINER_PORT}:${FRONT_PORT}
+      - 3000:3000
     volumes:
       - ./sample/nuxt3-app:/nuxt3-app
     working_dir: /
